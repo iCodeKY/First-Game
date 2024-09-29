@@ -15,6 +15,10 @@ run/main_scene="res://scene/the_game.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Musikk="*res://scene/musikk.tscn"
+
 [dotnet]
 
 project/assembly_name="MyFirstGame"
@@ -43,3 +47,4 @@ Gerak_kanan={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+textures/vram_compression/import_etc2_astc=true

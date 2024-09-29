@@ -1,11 +1,14 @@
-[gd_scene load_steps=13 format=3 uid="uid://d1gg2r2nv0ppl"]
+[gd_scene load_steps=16 format=3 uid="uid://d1gg2r2nv0ppl"]
 
+[ext_resource type="Script" path="res://script/System Game.gd" id="1_6ke0d"]
 [ext_resource type="PackedScene" uid="uid://bt26i16ir1y30" path="res://scene/player.tscn" id="1_tpk0d"]
 [ext_resource type="Texture2D" uid="uid://c36bxmnne75kn" path="res://assest/sprites/world_tileset.png" id="2_026nh"]
+[ext_resource type="FontFile" uid="uid://civ8plpwp7h67" path="res://assest/fonts/PixelOperator8-Bold.ttf" id="2_e50l3"]
 [ext_resource type="PackedScene" uid="uid://j584gx1ufofu" path="res://scene/platform.tscn" id="3_wf7f0"]
 [ext_resource type="PackedScene" uid="uid://dymbpqc2sphj1" path="res://scene/coin.tscn" id="4_ea3lu"]
 [ext_resource type="PackedScene" uid="uid://c7youdp88kgu5" path="res://scene/area_mematikan.tscn" id="5_w83r5"]
 [ext_resource type="PackedScene" uid="uid://c84lmqn0lnhj3" path="res://scene/enemy_slime.tscn" id="6_bkswi"]
+[ext_resource type="FontFile" uid="uid://bnlvc5g4yanxn" path="res://assest/fonts/PixelOperator8.ttf" id="7_76fq5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t612f"]
 texture = ExtResource("2_026nh")
@@ -480,6 +483,26 @@ _data = {
 
 [node name="TheGame" type="Node2D"]
 
+[node name="System Game" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_6ke0d")
+
+[node name="Score Label" type="Label" parent="System Game"]
+offset_left = 498.0
+offset_top = -99.0
+offset_right = 615.0
+offset_bottom = -64.0
+theme_override_colors/font_color = Color(0.0175657, 0.11913, 0.254037, 1)
+theme_override_colors/font_shadow_color = Color(0.720468, 0.720467, 0.720467, 1)
+theme_override_fonts/font = ExtResource("2_e50l3")
+theme_override_font_sizes/font_size = 8
+text = "Kamu mendapatkan x Coint!!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+justification_flags = 171
+metadata/_edit_use_anchors_ = true
+
 [node name="Player" parent="." instance=ExtResource("1_tpk0d")]
 position = Vector2(-42, 31)
 
@@ -552,6 +575,12 @@ position = Vector2(397, 22)
 
 [node name="Platform" type="Node" parent="."]
 
+[node name="Coin2" parent="Platform" instance=ExtResource("4_ea3lu")]
+position = Vector2(518, -53)
+
+[node name="Coin" parent="Platform" instance=ExtResource("4_ea3lu")]
+position = Vector2(518, -39)
+
 [node name="Platform2" parent="Platform" instance=ExtResource("3_wf7f0")]
 z_index = 1
 position = Vector2(-96, 52)
@@ -559,14 +588,67 @@ position = Vector2(-96, 52)
 [node name="PlatformGerak1" parent="Platform" instance=ExtResource("3_wf7f0")]
 position = Vector2(336, 37)
 
-[node name="Coin" parent="." instance=ExtResource("4_ea3lu")]
-position = Vector2(518, -39)
-
-[node name="Coin2" parent="." instance=ExtResource("4_ea3lu")]
-position = Vector2(518, -53)
-
-[node name="Coin3" parent="." instance=ExtResource("4_ea3lu")]
+[node name="Coin3" parent="Platform" instance=ExtResource("4_ea3lu")]
 position = Vector2(518, -68)
 
 [node name="Enemy_Slime2" parent="." instance=ExtResource("6_bkswi")]
 position = Vector2(518, -32)
+
+[node name="Note" type="Node" parent="."]
+
+[node name="Er er ki" type="Label" parent="Note"]
+offset_left = 1000.0
+offset_top = -169.0
+offset_right = 1076.0
+offset_bottom = -157.0
+theme_override_colors/font_color = Color(0.0175657, 0.11913, 0.254037, 1)
+theme_override_colors/font_shadow_color = Color(0.720468, 0.720467, 0.720467, 1)
+theme_override_fonts/font = ExtResource("7_76fq5")
+theme_override_font_sizes/font_size = 8
+text = "Er er ki
+"
+
+[node name="Label Hii" type="Label" parent="Note"]
+offset_left = -27.0
+offset_top = 12.0
+offset_bottom = 24.0
+theme_override_colors/font_color = Color(0.263117, 0.539952, 0.910577, 1)
+theme_override_colors/font_shadow_color = Color(0.758192, 0.758192, 0.758192, 1)
+theme_override_fonts/font = ExtResource("7_76fq5")
+theme_override_font_sizes/font_size = 8
+text = "Hii..
+"
+
+[node name="Label Lawan_ Lari" type="Label" parent="Note"]
+offset_left = 611.0
+offset_top = -66.0
+offset_right = 687.0
+offset_bottom = -54.0
+theme_override_colors/font_color = Color(0.0175657, 0.11913, 0.254037, 1)
+theme_override_colors/font_shadow_color = Color(0.720468, 0.720467, 0.720467, 1)
+theme_override_fonts/font = ExtResource("7_76fq5")
+theme_override_font_sizes/font_size = 8
+text = "Lawan / Lari"
+
+[node name="Label Penyebrangan" type="Label" parent="Note"]
+offset_left = 285.0
+offset_top = -8.0
+offset_right = 469.0
+offset_bottom = 4.0
+theme_override_colors/font_color = Color(0.263117, 0.539952, 0.910577, 1)
+theme_override_colors/font_shadow_color = Color(0.758192, 0.758192, 0.758192, 1)
+theme_override_fonts/font = ExtResource("7_76fq5")
+theme_override_font_sizes/font_size = 8
+text = "Gunakan ini untuk menyebrang"
+
+[node name="Label Hati2" type="Label" parent="Note"]
+offset_left = 141.0
+offset_top = 1.0
+offset_right = 197.0
+offset_bottom = 13.0
+theme_override_colors/font_color = Color(0.263117, 0.539952, 0.910577, 1)
+theme_override_colors/font_shadow_color = Color(0.758192, 0.758192, 0.758192, 1)
+theme_override_fonts/font = ExtResource("7_76fq5")
+theme_override_font_sizes/font_size = 8
+text = "Hati-Hati
+"
