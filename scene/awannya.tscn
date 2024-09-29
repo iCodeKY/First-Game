@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cv531djncjlam"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0mjbl"]
+load_path = "res://.godot/imported/Clouds 1.png-2a5a6df2df0373cac2767dc0dcbc2942.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g2kou"]
+size = Vector2(56.5, 17)
+
+[node name="Awannya" type="AnimatableBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, 1)
+texture = SubResource("CompressedTexture2D_0mjbl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4.75, 2.5)
+shape = SubResource("RectangleShape2D_g2kou")

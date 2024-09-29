@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bxhjxt62farrn"]
+
+[ext_resource type="Texture2D" uid="uid://7p5j4ayvumke" path="res://assest/sprites/Summer2.png" id="1_6s5yw"]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0, 0)
+motion_mirroring = Vector2(2304, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(-151, 226)
+texture = ExtResource("1_6s5yw")
